@@ -4,7 +4,11 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.5'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# gem 'sqlite3'
+
+#herokuがsqlite3に対応していないため変更が必要
+gem 'sqlite3', groups: %w(test development), require: false
+gem 'pg', groups: %w(production), require: false
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
